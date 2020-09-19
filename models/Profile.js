@@ -59,14 +59,14 @@ const ProfileSchema = new Schema({
         type: Boolean,
         default: false,
       },
-      descreption: {
+      description: {
         type: String,
       },
     },
   ],
   education: [
     {
-      schedule: {
+      school: {
         type: String,
         required: true,
       },
@@ -89,7 +89,7 @@ const ProfileSchema = new Schema({
         type: Boolean,
         default: false,
       },
-      descreption: {
+      description: {
         type: String,
       },
     },
