@@ -1,11 +1,14 @@
 import jwt_decode from 'jwt-decode';
 import React from 'react';
 import { Provider } from 'react-redux';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { logoutUser, setCurrentUser } from './actions/authActions';
+import { clearCurrentProfile } from './actions/profileAction';
 import './App.css';
 import Login from './components/auth/Login';
 import Register from './components/auth/Register';
+import PrivateRoute from './components/common/PrivateRoute';
+import Dashboard from './components/dashboard/Dashboard';
 import Footer from './components/layout/Footer';
 import Landing from './components/layout/Landing';
 import Navbar from './components/layout/Navbar';
@@ -24,8 +27,9 @@ if (localStorage.jwtToken) {
   const currentTime = Date.now() / 1000;
   if (decode.exp < currentTime) {
     // Logout user
-    store.dispatch(logoutUser);
-    // TODO: Clear current Profile
+    store.dispatch(logoutUser());
+    // Clear current Profile
+    store.dispatch(clearCurrentProfile());
     // Redirect to login
     window.location.href = '/login';
   }
@@ -43,6 +47,9 @@ function App() {
           <div className="container">
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
+            <Switch>
+              <PrivateRoute exact path="/dashboard" component={Dashboard} />
+            </Switch>
           </div>
           <Footer />
         </div>
