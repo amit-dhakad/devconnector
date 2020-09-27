@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { logoutUser, setCurrentUser } from './actions/authActions';
 import { clearCurrentProfile } from './actions/profileAction';
 import './App.css';
+import AddExperience from './components/add-credentials/AddExperience';
 import Login from './components/auth/Login';
 import Register from './components/auth/Register';
 import PrivateRoute from './components/common/PrivateRoute';
@@ -64,6 +65,13 @@ function App() {
                 exact
                 path="/edit-profile"
                 component={EditProfile}
+              />
+            </Switch>
+            <Switch>
+              <PrivateRoute
+                exact
+                path="/add-experience"
+                component={AddExperience}
               />
             </Switch>
           </div>
