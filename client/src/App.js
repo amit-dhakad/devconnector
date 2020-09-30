@@ -16,6 +16,7 @@ import EditProfile from './components/edit-profile/EditProfile';
 import Footer from './components/layout/Footer';
 import Landing from './components/layout/Landing';
 import Navbar from './components/layout/Navbar';
+import Profile from './components/profile/Profile';
 import Profiles from './components/profiles/Profiles';
 import store from './store';
 import setAuthToken from './utils/setAuthToken';
@@ -53,6 +54,7 @@ function App() {
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/profiles" component={Profiles} />
+            <Route exact path="/profile/:handle" component={Profile} />
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
             </Switch>
