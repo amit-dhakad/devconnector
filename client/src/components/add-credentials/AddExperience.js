@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link, withRouter } from 'react-router-dom';
 import { addExperience } from '../../actions/profileAction';
-import TextAreaFieldGroup from '../common/TextAreaFormGroup';
+import TextAreaFieldGroup from '../common/TextAreaFieldGroup';
 import TextFieldGroup from '../common/TextFieldGroup';
 class AddExperience extends Component {
   constructor(props) {

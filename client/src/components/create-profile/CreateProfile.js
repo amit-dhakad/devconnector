@@ -5,7 +5,7 @@ import { withRouter } from 'react-router-dom';
 import { createProfile } from '../../actions/profileAction';
 import InputGroup from '../common/InputGroup';
 import SelectListGroup from '../common/SelectListGroup';
-import TextAreaFieldGroup from '../common/TextAreaFormGroup';
+import TextAreaFieldGroup from '../common/TextAreaFieldGroup';
 import TextFieldGroup from '../common/TextFieldGroup';
 
 class CreateProfile extends Component {

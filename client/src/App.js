@@ -17,6 +17,7 @@ import Footer from './components/layout/Footer';
 import Landing from './components/layout/Landing';
 import Navbar from './components/layout/Navbar';
 import NotFound from './components/not-found/NotFound';
+import Posts from './components/posts/Posts';
 import Profile from './components/profile/Profile';
 import Profiles from './components/profiles/Profiles';
 import store from './store';
@@ -86,6 +87,9 @@ function App() {
                 path="/add-education"
                 component={AddEducation}
               />
+            </Switch>
+            <Switch>
+              <PrivateRoute exact path="/feed" component={Posts} />
             </Switch>
             <Route exact path="/not-found" component={NotFound} />
           </div>
