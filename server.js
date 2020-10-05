@@ -44,9 +44,11 @@ app.use('/api/posts', posts);
 //  Server static assets if in production
 
 if (process.env.NODE_ENV === 'production') {
+  console.log('==============1111');
   // Set static folder
   app.use(express.static('client/build'));
   app.get('*', (req, res) => {
+    console.log('22222222222222222');
     res.sendFile(path.resilve(__dirname, 'client', 'build', 'index.html'));
   });
 }
